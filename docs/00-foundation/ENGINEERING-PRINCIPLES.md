@@ -3,7 +3,7 @@ id: QK-0002
 title: Engineering Principles
 subtitle: Engineering Principles of QuantKimun
 document: ENGINEERING-PRINCIPLES.md
-version: 1.0.0
+version: 2.0.0
 status: Approved
 owner: Lankimun Digital
 authors:
@@ -21,212 +21,340 @@ language: en
 
 This document defines the engineering principles that govern the design, implementation and evolution of QuantKimun.
 
-These principles are intended to guide architectural decisions, coding practices and project governance throughout the lifetime of the framework.
-
-This document complements the Founding Charter (QK-0001) by translating the project's philosophy into actionable engineering practices.
+These principles constitute the architectural foundation of the project and should guide every technical decision.
 
 ---
 
-# Scope
+## Scope
 
-These principles apply to:
+These principles apply to every component of QuantKimun, including:
 
 - Architecture
-- Domain modeling
-- Application design
+- Domain Model
+- Application Services
 - Infrastructure
-- Documentation
+- Adapters
 - Testing
-- Collaboration
-- Future contributions
-
-Every contributor should understand and follow these principles before implementing new functionality.
+- Documentation
+- Future Contributions
 
 ---
 
-# Principle 1 — Architecture Before Implementation
+# EP-01 — Architecture Before Implementation
 
-Software architecture defines the structure that enables long-term evolution.
+## Statement
 
-Implementation should emerge from architecture rather than architecture emerging from implementation.
+Architecture precedes implementation.
 
-Quick solutions that compromise architectural integrity should be avoided.
+## Rationale
 
----
+A well-defined architecture enables long-term evolution and prevents software degradation.
 
-# Principle 2 — Domain First
+## Implications
 
-Business knowledge is the core asset of QuantKimun.
-
-Trading platforms, databases, messaging systems and external services are implementation details.
-
-The Domain Model must remain independent from external technologies.
+- Design first.
+- Code second.
+- Avoid architectural shortcuts.
 
 ---
 
-# Principle 3 — Platform Independence
+# EP-02 — Domain First
 
-QuantKimun is not a NinjaTrader framework.
+## Statement
 
-It is a quantitative trading framework.
+Business knowledge is the most valuable asset of QuantKimun.
 
-Trading platforms are adapters.
+## Rationale
 
-Business logic must never depend directly on platform-specific APIs.
+Technologies evolve.
 
----
+Business concepts endure.
 
-# Principle 4 — Risk as a First-Class Concern
+## Implications
 
-Risk management is part of the domain.
-
-It is not an optional module.
-
-Position sizing, exposure control, drawdown protection and capital preservation are fundamental responsibilities of the framework.
+- The Domain Model must remain independent.
+- Infrastructure depends on the Domain.
+- Never the opposite.
 
 ---
 
-# Principle 5 — Documentation as Code
+# EP-03 — Platform Independence
 
-Documentation is maintained with the same discipline as source code.
+## Statement
 
-Every significant architectural decision shall be documented.
+QuantKimun is platform-agnostic.
 
-Documentation evolves together with implementation.
+## Rationale
 
----
+Trading platforms are implementation details.
 
-# Principle 6 — Testability by Design
+## Implications
 
-Software should be designed to be testable.
-
-Testing is not an activity added after implementation.
-
-Dependencies should be injectable.
-
-Components should be isolated.
-
-Business rules should be executable without requiring external platforms.
+- NinjaTrader is an adapter.
+- Future adapters should integrate without changing business logic.
+- Platform APIs must never leak into the domain.
 
 ---
 
-# Principle 7 — Separation of Concerns
+# EP-04 — Risk as a First-Class Concern
 
-Each component should have a single, clearly defined responsibility.
+## Statement
 
-Responsibilities should not overlap.
+Risk management is part of the core domain.
 
-A change in one concern should not require changes in unrelated components.
+## Rationale
 
----
+Capital preservation is fundamental for every trading system.
 
-# Principle 8 — Explicit Over Implicit
+## Implications
 
-Behavior should be explicit.
-
-Hidden assumptions, implicit dependencies and magic values should be avoided.
-
-Code should communicate intent clearly.
+- Position sizing belongs to the domain.
+- Drawdown protection belongs to the domain.
+- Exposure control belongs to the domain.
 
 ---
 
-# Principle 9 — Simplicity Before Complexity
+# EP-05 — Documentation as Code
 
-Complexity is introduced only when it provides measurable value.
+## Statement
 
-Simple, understandable solutions are preferred over sophisticated implementations.
+Documentation is part of the product.
 
-Optimization should never compromise readability without clear justification.
+## Rationale
 
----
+Knowledge that is not documented is eventually lost.
 
-# Principle 10 — Composition Over Inheritance
+## Implications
 
-Behavior should be composed from independent components.
-
-Inheritance should only be used when a genuine "is-a" relationship exists.
-
-Composition promotes flexibility, reuse and maintainability.
+- Every significant feature must be documented.
+- Every architectural decision must be traceable.
+- Documentation evolves together with the code.
 
 ---
 
-# Principle 11 — SOLID by Default
+# EP-06 — Testability by Design
 
-Object-oriented components should follow SOLID principles whenever applicable.
+## Statement
 
-These principles improve maintainability, extensibility and testability.
+Software must be designed to be testable.
+
+## Rationale
+
+Testing is an architectural characteristic.
+
+## Implications
+
+- Dependency Injection.
+- Small components.
+- Deterministic behavior.
+- Unit tests without platform dependencies.
 
 ---
 
-# Principle 12 — Clean Architecture
+# EP-07 — Separation of Concerns
+
+## Statement
+
+Each component has one responsibility.
+
+## Rationale
+
+Well-defined responsibilities improve maintainability.
+
+## Implications
+
+- Small services.
+- Small classes.
+- Clear boundaries.
+
+---
+
+# EP-08 — Explicit Over Implicit
+
+## Statement
+
+Software should communicate intent explicitly.
+
+## Rationale
+
+Implicit behavior increases maintenance costs.
+
+## Implications
+
+- Avoid magic numbers.
+- Avoid hidden dependencies.
+- Favor readability.
+
+---
+
+# EP-09 — Simplicity Before Complexity
+
+## Statement
+
+Complexity must be justified.
+
+## Rationale
+
+Simple systems are easier to understand and evolve.
+
+## Implications
+
+- Prefer simple designs.
+- Avoid premature optimization.
+- Introduce complexity only when necessary.
+
+---
+
+# EP-10 — Composition Over Inheritance
+
+## Statement
+
+Behavior should be composed rather than inherited.
+
+## Rationale
+
+Composition improves flexibility and reuse.
+
+## Implications
+
+- Favor interfaces.
+- Favor dependency injection.
+- Minimize inheritance hierarchies.
+
+---
+
+# EP-11 — SOLID by Default
+
+## Statement
+
+Object-oriented components should follow SOLID principles.
+
+## Rationale
+
+SOLID promotes maintainable software.
+
+## Implications
+
+- Single Responsibility.
+- Open/Closed.
+- Liskov Substitution.
+- Interface Segregation.
+- Dependency Inversion.
+
+---
+
+# EP-12 — Clean Architecture
+
+## Statement
 
 Dependencies always point toward the Domain.
 
-Business rules must remain independent from frameworks, user interfaces, databases and external services.
+## Rationale
 
-Infrastructure depends on the Domain.
+Business rules must remain independent from frameworks.
 
-Never the opposite.
+## Implications
+
+- Domain has no infrastructure dependencies.
+- Infrastructure references Domain.
+- UI references Application.
 
 ---
 
-# Principle 13 — Domain-Driven Design
+# EP-13 — Domain-Driven Design
+
+## Statement
 
 The Domain Model represents business knowledge.
 
-Ubiquitous Language should be used consistently throughout the codebase and documentation.
+## Rationale
 
-Technical concerns should never leak into domain concepts.
+The domain language should drive software design.
+
+## Implications
+
+- Ubiquitous Language.
+- Rich domain model.
+- Clear bounded contexts.
 
 ---
 
-# Principle 14 — Event-Driven Thinking
+# EP-14 — Event-Driven Thinking
 
-Components should communicate through well-defined events whenever appropriate.
+## Statement
+
+Components communicate through events whenever appropriate.
+
+## Rationale
 
 Events reduce coupling and improve extensibility.
 
-Not every interaction requires events, but they should be preferred for domain notifications.
+## Implications
+
+- Domain Events.
+- Integration Events.
+- Loose coupling.
 
 ---
 
-# Principle 15 — Evolution Over Perfection
+# EP-15 — Evolution Over Perfection
 
-The framework is expected to evolve.
+## Statement
 
-Design should facilitate incremental improvement.
+Software evolves continuously.
 
-Premature optimization and unnecessary abstraction should be avoided.
+## Rationale
 
----
+Perfect software does not exist.
 
-# Principle 16 — Backward Compatibility
+## Implications
 
-Public APIs should evolve carefully.
-
-Breaking changes require explicit justification and versioning.
-
-Compatibility should be preserved whenever practical.
+- Incremental improvements.
+- Continuous refactoring.
+- Continuous learning.
 
 ---
 
-# Principle 17 — Engineering Discipline
+# EP-16 — Backward Compatibility
 
-Quality is achieved through discipline rather than individual effort.
+## Statement
 
-Small commits.
+Public APIs evolve responsibly.
 
-Clear documentation.
+## Rationale
 
-Meaningful reviews.
+Users depend on API stability.
 
-Continuous improvement.
+## Implications
+
+- Version public APIs.
+- Document breaking changes.
+- Preserve compatibility whenever possible.
+
+---
+
+# EP-17 — Engineering Discipline
+
+## Statement
+
+Quality emerges from disciplined engineering practices.
+
+## Rationale
+
+Consistency produces maintainable software.
+
+## Implications
+
+- Small commits.
+- Meaningful commit messages.
+- Peer review.
+- Continuous improvement.
 
 ---
 
 # Kimün Principle
 
-> **Knowledge becomes valuable only when it is transformed into disciplined action.**
+> **Knowledge becomes valuable only when it is transformed into disciplined engineering.**
 
 ---
 
@@ -241,7 +369,7 @@ Continuous improvement.
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-07-26 | Garcy Valenzuela | Initial version |
+| 2.0.0 | 2026-07-26 | Garcy Valenzuela | Introduced Engineering Principle identifiers (EP-01 to EP-17) and standardized structure. |
 
 ---
 
