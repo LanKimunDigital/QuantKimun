@@ -1,0 +1,67 @@
+<Project>
+
+  <!-- ========================================================= -->
+  <!-- Project Identity                                           -->
+  <!-- ========================================================= -->
+
+  <PropertyGroup>
+    <Company>Lankimun Digital</Company>
+    <Product>QuantKimun</Product>
+    <Authors>Garcy Valenzuela</Authors>
+    <Copyright>Copyright © 2026 Lankimun Digital</Copyright>
+    <RepositoryUrl>https://github.com/lankimun/QuantKimun</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- ========================================================= -->
+  <!-- .NET Configuration                                         -->
+  <!-- ========================================================= -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- ========================================================= -->
+  <!-- Build Configuration                                        -->
+  <!-- ========================================================= -->
+
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>false</ContinuousIntegrationBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <!-- ========================================================= -->
+  <!-- Code Quality                                               -->
+  <!-- ========================================================= -->
+
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- ========================================================= -->
+  <!-- Debug Configuration                                        -->
+  <!-- ========================================================= -->
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <!-- ========================================================= -->
+  <!-- Release Configuration                                      -->
+  <!-- ========================================================= -->
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <Optimize>true</Optimize>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+</Project>
