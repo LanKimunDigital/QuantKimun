@@ -1,0 +1,281 @@
+---
+id: QK-0105
+title: Dependency Rules
+subtitle: Architectural Dependency Constraints
+document: DEPENDENCY-RULES.md
+version: 1.0.0
+status: Approved
+owner: Lankimun Digital
+authors:
+  - Garcy Valenzuela
+reviewers: []
+created: 2026-07-26
+updated: 2026-07-26
+classification: Public
+language: en
+---
+
+# Dependency Rules
+
+## Purpose
+
+This document defines the dependency rules governing QuantKimun.
+
+Its objective is to preserve architectural integrity throughout the lifetime of the project.
+
+All software components shall comply with these rules.
+
+---
+
+# Guiding Principle
+
+Business knowledge is the most valuable asset of QuantKimun.
+
+Therefore:
+
+**Dependencies always point toward business knowledge.**
+
+Technology depends on the business.
+
+The business never depends on technology.
+
+---
+
+# Dependency Direction
+
+The only allowed dependency flow is:
+
+```
+Applications
+
+        │
+
+        ▼
+
+Modules.Application
+
+        │
+
+        ▼
+
+Modules.Domain
+
+        ▲
+
+        │
+
+Modules.Infrastructure
+
+        ▲
+
+        │
+
+Adapters
+
+        ▲
+
+        │
+
+External Technologies
+```
+
+The Domain layer has no outgoing dependencies to infrastructure or external systems.
+
+---
+
+# Shared Components
+
+Shared components may be referenced by any module.
+
+Examples include:
+
+- Shared Kernel
+- Events
+- Common
+- Configuration
+
+Shared components shall not contain business-specific logic.
+
+---
+
+# Allowed Dependencies
+
+## Applications
+
+May reference:
+
+- Modules.Application
+- Shared components
+
+Must not reference:
+
+- Infrastructure
+- Adapters
+
+---
+
+## Modules.Application
+
+May reference:
+
+- Modules.Domain
+- Shared components
+
+Must not reference:
+
+- Adapters
+- Applications
+
+---
+
+## Modules.Domain
+
+May reference:
+
+- Shared Kernel
+- Domain contracts
+- Value Objects
+
+Must never reference:
+
+- Infrastructure
+- Adapters
+- Databases
+- UI
+- Broker APIs
+- Framework-specific libraries
+
+---
+
+## Modules.Infrastructure
+
+May reference:
+
+- Modules.Domain
+- Shared components
+
+Implements infrastructure contracts defined by the domain or application.
+
+---
+
+## Adapters
+
+May reference:
+
+- Modules.Application
+- Shared components
+
+Adapters translate between external technologies and the QuantKimun domain.
+
+Adapters shall never implement business rules.
+
+---
+
+# Module Dependencies
+
+Modules should remain independent whenever possible.
+
+Preferred communication mechanisms include:
+
+- interfaces;
+- domain events;
+- contracts.
+
+Direct module references should be minimized.
+
+---
+
+# Circular Dependencies
+
+Circular dependencies are prohibited.
+
+If a circular dependency appears:
+
+1. Extract a shared contract.
+2. Introduce a domain event.
+3. Reevaluate module boundaries.
+
+---
+
+# Business Rules
+
+Business rules belong exclusively inside Business Engines.
+
+Business rules shall never be implemented inside:
+
+- adapters;
+- infrastructure;
+- user interfaces;
+- persistence components.
+
+---
+
+# Technology Independence
+
+Technology is replaceable.
+
+Business knowledge is not.
+
+Replacing:
+
+- NinjaTrader;
+- Interactive Brokers;
+- SQL Server;
+- SQLite;
+- REST APIs;
+
+shall not require changes to the domain model.
+
+---
+
+# Testing
+
+Every Business Engine must be executable without:
+
+- broker connectivity;
+- market connectivity;
+- databases;
+- external services.
+
+Business behavior shall be independently testable.
+
+---
+
+# Architectural Compliance
+
+Every pull request introducing a new dependency should answer:
+
+- Is this dependency necessary?
+- Does it violate architectural boundaries?
+- Could an interface or domain event be used instead?
+- Does it increase coupling?
+
+---
+
+# Kimün Principle
+
+> **Dependencies are architectural commitments. Every new dependency should be treated as a long-term decision.**
+
+---
+
+# References
+
+- QK-0002 — Engineering Principles
+- QK-0100 — Architecture Vision
+- QK-0102 — Domain Model Specification
+- QK-0103 — Solution Structure
+- QK-0104 — Modules
+
+---
+
+# Change History
+
+| Version | Date | Author | Description |
+|---------|------|--------|-------------|
+| 1.0.0 | 2026-07-26 | Garcy Valenzuela | Initial version. |
+
+---
+
+© 2026 Lankimun Digital
+
+This document is part of the QuantKimun project.
