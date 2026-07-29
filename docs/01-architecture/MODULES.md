@@ -15,7 +15,7 @@ classification: Public
 language: en
 ---
 
-# Modules
+## Modules
 
 ## Purpose
 
@@ -25,7 +25,7 @@ Each module represents a bounded business capability with clear responsibilities
 
 ---
 
-# Architectural Philosophy
+## Architectural Philosophy
 
 Modules encapsulate business capabilities.
 
@@ -39,11 +39,12 @@ Each module owns:
 Modules collaborate through contracts and domain events.
 
 ---
-# Architectural Hierarchy
+
+## Architectural Hierarchy
 
 QuantKimun organizes its business architecture into three conceptual levels.
 
-```
+```text
 Business Capability
         │
         ▼
@@ -120,7 +121,7 @@ Engines collaborate while remaining cohesive and independently testable.
 
 ---
 
-# Architectural Rule
+## Architectural Rule
 
 Capabilities define Modules.
 
@@ -132,7 +133,7 @@ Technology supports the Engines.
 
 Technology never defines the business architecture.
 
-```
+```text
 Capability
         │
         ▼
@@ -147,7 +148,7 @@ Technology
 
 ---
 
-# Design Principle
+## Design Principle
 
 QuantKimun evolves by introducing new capabilities rather than increasing the complexity of existing ones.
 
@@ -158,7 +159,8 @@ Whenever possible:
 - add a new Capability only when introducing a new business area.
 
 This hierarchy promotes long-term maintainability, scalability and architectural clarity.
-# Shared Foundation
+
+## Shared Foundation
 
 The following components are shared by all modules:
 
@@ -171,20 +173,20 @@ These components do not contain business capabilities.
 
 ---
 
-# Strategy Module
+## Strategy Module
 
-## Purpose
+### Strategy Purpose
 
 Generate trading signals from market information.
 
-## Responsibilities
+### Strategy Responsibilities
 
 - evaluate market conditions;
 - execute strategy rules;
 - manage strategy state;
 - emit trading signals.
 
-## Owns
+### Strategy Owns
 
 - Strategy Engine
 - Indicators
@@ -192,13 +194,13 @@ Generate trading signals from market information.
 
 ---
 
-# Risk Module
+## Risk Module
 
-## Purpose
+### Risk Purpose
 
 Protect capital by validating trading decisions.
 
-## Responsibilities
+### Risk Responsibilities
 
 - exposure control;
 - drawdown protection;
@@ -206,89 +208,89 @@ Protect capital by validating trading decisions.
 - capital preservation;
 - position sizing.
 
-## Owns
+### Risk Owns
 
 - Risk Engine
 - Position Sizing Engine
 
 ---
 
-# Execution Module
+## Execution Module
 
-## Purpose
+### Execution Purpose
 
 Coordinate trade execution.
 
-## Responsibilities
+### Execution Responsibilities
 
 - create domain orders;
 - coordinate execution;
 - process execution reports.
 
-## Owns
+### Execution Owns
 
 - Execution Engine
 - Order lifecycle
 
 ---
 
-# Portfolio Module
+## Portfolio Module
 
-## Purpose
+### Portfolio Purpose
 
 Maintain portfolio state.
 
-## Responsibilities
+### Portfolio Responsibilities
 
 - positions;
 - allocations;
 - account equity;
 - exposure.
 
-## Owns
+### Portfolio Owns
 
 - Portfolio Engine
 
 ---
 
-# Analytics Module
+## Analytics Module
 
-## Purpose
+### Analytics Purpose
 
 Generate operational and performance insights.
 
-## Responsibilities
+### Analytics Responsibilities
 
 - performance metrics;
 - drawdown analysis;
 - reporting;
 - statistics.
 
-## Owns
+### Analytics Owns
 
 - Analytics Engine
 
 ---
 
-# Backtesting Module
+## Backtesting Module
 
-## Purpose
+### Backtesting Purpose
 
 Replay historical market data.
 
-## Responsibilities
+### Backtesting Responsibilities
 
 - historical execution;
 - simulation;
 - performance evaluation.
 
-## Owns
+### Backtesting Owns
 
 - Backtesting Engine
 
 ---
 
-# Future Modules
+## Future Modules
 
 Examples include:
 
@@ -304,7 +306,7 @@ Future modules should follow the same architectural principles.
 
 ---
 
-# Module Communication
+## Module Communication
 
 Modules communicate using:
 
@@ -316,7 +318,7 @@ Direct dependencies between modules should be minimized.
 
 ---
 
-# Design Principles
+## Design Principles
 
 Modules shall remain:
 
@@ -327,13 +329,13 @@ Modules shall remain:
 
 ---
 
-# Kimün Principle
+## Kimün Principle
 
 > Business capabilities define the architecture—not technologies.
 
 ---
 
-# References
+## References
 
 - QK-0100 — Architecture Vision
 - QK-0102 — Domain Model Specification
@@ -341,10 +343,10 @@ Modules shall remain:
 
 ---
 
-# Change History
+## Change History
 
 | Version | Date | Author | Description |
-|---------|------|--------|-------------|
+| ------- | ---- | ------ | ----------- |
 | 1.0.0 | 2026-07-26 | Garcy Valenzuela | Initial version. |
 
 ---

@@ -15,7 +15,7 @@ classification: Public
 language: en
 ---
 
-# Architecture Vision
+## Architecture Vision
 
 ## Purpose
 
@@ -29,7 +29,7 @@ Its purpose is to define architectural direction rather than technical specifica
 
 ---
 
-# Scope
+## Scope
 
 This document applies to every component of QuantKimun, including:
 
@@ -45,7 +45,7 @@ This document applies to every component of QuantKimun, including:
 
 ---
 
-# Architectural Vision
+## Architectural Vision
 
 QuantKimun is designed as a modular engineering platform for quantitative trading.
 
@@ -63,7 +63,7 @@ The architecture should remain stable.
 
 ---
 
-# Architectural Goals
+## Architectural Goals
 
 The architecture should enable:
 
@@ -77,7 +77,7 @@ The architecture should enable:
 
 ---
 
-# Architectural Style
+## Architectural Style
 
 QuantKimun adopts a layered architecture inspired by:
 
@@ -92,7 +92,7 @@ Everything else supports it.
 
 ---
 
-# Architectural Layers
+## Architectural Layers
 
 The platform is organized into five conceptual layers.
 
@@ -174,7 +174,7 @@ Adapters translate external concepts into the QuantKimun domain.
 
 ---
 
-# Cross-Cutting Capabilities
+## Cross-Cutting Capabilities
 
 Some capabilities span multiple architectural layers.
 
@@ -193,11 +193,11 @@ These capabilities should remain modular and loosely coupled.
 
 ---
 
-# Dependency Rule
+## Dependency Rule
 
 Dependencies always point toward the Domain.
 
-```
+```text
 Presentation
       │
       ▼
@@ -219,7 +219,7 @@ The Domain references no external layer.
 
 ---
 
-# Platform Independence
+## Platform Independence
 
 QuantKimun is independent from trading platforms.
 
@@ -229,7 +229,7 @@ A strategy developed for one platform should require minimal adaptation to execu
 
 ---
 
-# Modularity
+## Modularity
 
 Every module should expose a well-defined public contract.
 
@@ -239,7 +239,7 @@ Modules communicate through explicit interfaces and domain events.
 
 ---
 
-# Extensibility
+## Extensibility
 
 The architecture is expected to evolve.
 
@@ -254,7 +254,7 @@ Examples include:
 
 ---
 
-# Testability
+## Testability
 
 Every business rule should be executable without requiring:
 
@@ -267,7 +267,7 @@ The Domain should be fully testable in isolation.
 
 ---
 
-# Architectural Quality Attributes
+## Architectural Quality Attributes
 
 The architecture prioritizes:
 
@@ -283,7 +283,7 @@ Performance is important but should never compromise architectural integrity wit
 
 ---
 
-# Future Evolution
+## Future Evolution
 
 The architecture is intended to support future capabilities such as:
 
@@ -298,13 +298,13 @@ These represent architectural possibilities rather than implementation commitmen
 
 ---
 
-# Kimün Principle
+## Kimün Principle
 
 > **Architecture is the discipline that allows knowledge to survive technological change.**
 
 ---
 
-# References
+## References
 
 - QK-0001 — Founding Charter
 - QK-0002 — Engineering Principles
@@ -313,10 +313,10 @@ These represent architectural possibilities rather than implementation commitmen
 
 ---
 
-# Change History
+## Change History
 
 | Version | Date | Author | Description |
-|---------|------|--------|-------------|
+| -------- | ------ | -------- | ------------- |
 | 1.0.0 | 2026-07-26 | Garcy Valenzuela | Initial version. |
 
 ---

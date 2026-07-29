@@ -15,7 +15,7 @@ classification: Public
 language: en
 ---
 
-# Dependency Rules
+## Dependency Rules
 
 ## Purpose
 
@@ -27,7 +27,7 @@ All software components shall comply with these rules.
 
 ---
 
-# Guiding Principle
+## Guiding Principle
 
 Business knowledge is the most valuable asset of QuantKimun.
 
@@ -41,39 +41,25 @@ The business never depends on technology.
 
 ---
 
-# Dependency Direction
+## Dependency Direction
 
 The only allowed dependency flow is:
 
-```
+```text
 Applications
-
         │
-
         ▼
-
 Modules.Application
-
         │
-
         ▼
-
 Modules.Domain
-
         ▲
-
         │
-
 Modules.Infrastructure
-
         ▲
-
         │
-
 Adapters
-
         ▲
-
         │
 
 External Technologies
@@ -83,7 +69,7 @@ The Domain layer has no outgoing dependencies to infrastructure or external syst
 
 ---
 
-# Shared Components
+## Shared Components
 
 Shared components may be referenced by any module.
 
@@ -98,7 +84,7 @@ Shared components shall not contain business-specific logic.
 
 ---
 
-# Allowed Dependencies
+## Allowed Dependencies
 
 ## Applications
 
@@ -171,7 +157,7 @@ Adapters shall never implement business rules.
 
 ---
 
-# Module Dependencies
+## Module Dependencies
 
 Modules should remain independent whenever possible.
 
@@ -185,7 +171,7 @@ Direct module references should be minimized.
 
 ---
 
-# Circular Dependencies
+## Circular Dependencies
 
 Circular dependencies are prohibited.
 
@@ -197,7 +183,7 @@ If a circular dependency appears:
 
 ---
 
-# Business Rules
+## Business Rules
 
 Business rules belong exclusively inside Business Engines.
 
@@ -210,7 +196,7 @@ Business rules shall never be implemented inside:
 
 ---
 
-# Technology Independence
+## Technology Independence
 
 Technology is replaceable.
 
@@ -228,7 +214,7 @@ shall not require changes to the domain model.
 
 ---
 
-# Testing
+## Testing
 
 Every Business Engine must be executable without:
 
@@ -241,7 +227,7 @@ Business behavior shall be independently testable.
 
 ---
 
-# Architectural Compliance
+## Architectural Compliance
 
 Every pull request introducing a new dependency should answer:
 
@@ -252,13 +238,13 @@ Every pull request introducing a new dependency should answer:
 
 ---
 
-# Kimün Principle
+## Kimün Principle
 
 > **Dependencies are architectural commitments. Every new dependency should be treated as a long-term decision.**
 
 ---
 
-# References
+## References
 
 - QK-0002 — Engineering Principles
 - QK-0100 — Architecture Vision
@@ -268,11 +254,11 @@ Every pull request introducing a new dependency should answer:
 
 ---
 
-# Change History
+## Change History
 
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 1.0.0 | 2026-07-26 | Garcy Valenzuela | Initial version. |
+| Version | Date       | Author           | Description        |
+|---------|------------|------------------|--------------------|
+| 1.0.0   | 2026-07-26 | Garcy Valenzuela | Initial version.   |
 
 ---
 

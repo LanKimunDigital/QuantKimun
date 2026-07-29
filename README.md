@@ -10,4 +10,4 @@ Developed by Lankimun Digital.
 
 ## Documentation
 
-See `/docs`.
+See '/docs'
