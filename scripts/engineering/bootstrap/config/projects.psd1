@@ -3,55 +3,55 @@
     Projects = @(
         @{
             Name = "QuantKimun.SharedKernel"
-            Folder = "src/Shared"
+            Path = "src/Shared/QuantKimun.SharedKernel"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Common"
-            Folder = "src/Shared"
+            Path = "src/Shared/QuantKimun.Common"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Events"
-            Folder = "src/Shared"
+            Path = "src/Shared/QuantKimun.Events"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Configuration"
-            Folder = "src/Shared"
+            Path = "src/Shared/QuantKimun.Configuration"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Modules.Strategy.Domain"
-            Folder = "src/Modules/Strategy/Domain"
+            Path = "src/Modules/Strategy/Domain/QuantKimun.Modules.Strategy.Domain"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Modules.Strategy.Application"
-            Folder = "src/Modules/Strategy/Application"
+            Path = "src/Modules/Strategy/Application/QuantKimun.Modules.Strategy.Application"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Modules.Strategy.Infrastructure"
-            Folder = "src/Modules/Strategy/Infrastructure"
+            Path = "src/Modules/Strategy/Infrastructure/QuantKimun.Modules.Strategy.Infrastructure"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Adapters.Abstractions"
-            Folder = "src/Adapters"
+            Path = "src/Adapters/QuantKimun.Adapters.Abstractions"
             Type = "classlib"
         }
 
         @{
             Name = "QuantKimun.Applications.CLI"
-            Folder = "src/Applications"
+            Path = "src/Applications/QuantKimun.Applications.CLI"
             Type = "console"
         }
     )

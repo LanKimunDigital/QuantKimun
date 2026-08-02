@@ -24,6 +24,16 @@ if (-not (Test-Path $configFile))
 
 $config = Import-PowerShellDataFile $configFile
 
+$initializeFoldersFunction = Join-Path $PSScriptRoot "functions\InitializeFolders.ps1"
+
+if (-not (Test-Path $initializeFoldersFunction))
+{
+    Write-Host "InitializeFolders function not found." -ForegroundColor Red
+    exit 1
+}
+
+. $initializeFoldersFunction
+
 Write-Host "Projects defined:" -ForegroundColor Yellow
 Write-Host ""
 
@@ -31,6 +41,8 @@ foreach ($project in $config.Projects)
 {
     Write-Host (" - {0}" -f $project.Name)
 }
+
+Initialize-Folders -Projects $config.Projects
 
 Write-Host ""
 Write-Host "Bootstrap finished." -ForegroundColor Green
