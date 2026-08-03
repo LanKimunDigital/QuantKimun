@@ -1,5 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\QuantKimun.Modules.Strategy.Domain\QuantKimun.Modules.Strategy.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\Shared\QuantKimun.Events\QuantKimun.Events.csproj" />
+    <ProjectReference Include="..\..\..\..\Shared\QuantKimun.Configuration\QuantKimun.Configuration.csproj" />
+    <ProjectReference Include="..\..\..\..\Shared\QuantKimun.Common\QuantKimun.Common.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
