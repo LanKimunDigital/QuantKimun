@@ -3,6 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.SharedKernel", "src\Shared\QuantKimun.SharedKernel\QuantKimun.SharedKernel.csproj", "{118EE914-1F8C-405C-9639-3F93BF7718D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Common", "src\Shared\QuantKimun.Common\QuantKimun.Common.csproj", "{CECE3402-B094-4B20-809C-E9ECC67CD85F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Events", "src\Shared\QuantKimun.Events\QuantKimun.Events.csproj", "{A866934A-5245-48AF-961D-91341A5390A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Configuration", "src\Shared\QuantKimun.Configuration\QuantKimun.Configuration.csproj", "{48CCEC2E-8DDE-44CC-A8D1-0F25C238BFA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Modules.Strategy.Domain", "src\Modules\Strategy\Domain\QuantKimun.Modules.Strategy.Domain\QuantKimun.Modules.Strategy.Domain.csproj", "{C0CCECCF-EE9A-4298-ABDE-8C0E79E8714F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Modules.Strategy.Application", "src\Modules\Strategy\Application\QuantKimun.Modules.Strategy.Application\QuantKimun.Modules.Strategy.Application.csproj", "{6CCD2A80-94B4-4389-8B73-4D6E391629D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Modules.Strategy.Infrastructure", "src\Modules\Strategy\Infrastructure\QuantKimun.Modules.Strategy.Infrastructure\QuantKimun.Modules.Strategy.Infrastructure.csproj", "{9AEB96A7-5F45-4910-817A-8C88CCA25104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Adapters.Abstractions", "src\Adapters\QuantKimun.Adapters.Abstractions\QuantKimun.Adapters.Abstractions.csproj", "{C2F6AA84-8BCA-4ACF-86E3-36022EF8B181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantKimun.Applications.CLI", "src\Applications\QuantKimun.Applications.CLI\QuantKimun.Applications.CLI.csproj", "{6BCC3BDF-AF02-446C-A0E7-1C42CE98E615}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +28,43 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{118EE914-1F8C-405C-9639-3F93BF7718D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{118EE914-1F8C-405C-9639-3F93BF7718D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{118EE914-1F8C-405C-9639-3F93BF7718D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{118EE914-1F8C-405C-9639-3F93BF7718D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECE3402-B094-4B20-809C-E9ECC67CD85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECE3402-B094-4B20-809C-E9ECC67CD85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECE3402-B094-4B20-809C-E9ECC67CD85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECE3402-B094-4B20-809C-E9ECC67CD85F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A866934A-5245-48AF-961D-91341A5390A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A866934A-5245-48AF-961D-91341A5390A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A866934A-5245-48AF-961D-91341A5390A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A866934A-5245-48AF-961D-91341A5390A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48CCEC2E-8DDE-44CC-A8D1-0F25C238BFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48CCEC2E-8DDE-44CC-A8D1-0F25C238BFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48CCEC2E-8DDE-44CC-A8D1-0F25C238BFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48CCEC2E-8DDE-44CC-A8D1-0F25C238BFA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CCECCF-EE9A-4298-ABDE-8C0E79E8714F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CCECCF-EE9A-4298-ABDE-8C0E79E8714F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CCECCF-EE9A-4298-ABDE-8C0E79E8714F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CCECCF-EE9A-4298-ABDE-8C0E79E8714F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CCD2A80-94B4-4389-8B73-4D6E391629D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CCD2A80-94B4-4389-8B73-4D6E391629D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CCD2A80-94B4-4389-8B73-4D6E391629D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CCD2A80-94B4-4389-8B73-4D6E391629D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AEB96A7-5F45-4910-817A-8C88CCA25104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEB96A7-5F45-4910-817A-8C88CCA25104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEB96A7-5F45-4910-817A-8C88CCA25104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEB96A7-5F45-4910-817A-8C88CCA25104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F6AA84-8BCA-4ACF-86E3-36022EF8B181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F6AA84-8BCA-4ACF-86E3-36022EF8B181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F6AA84-8BCA-4ACF-86E3-36022EF8B181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F6AA84-8BCA-4ACF-86E3-36022EF8B181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BCC3BDF-AF02-446C-A0E7-1C42CE98E615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BCC3BDF-AF02-446C-A0E7-1C42CE98E615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BCC3BDF-AF02-446C-A0E7-1C42CE98E615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BCC3BDF-AF02-446C-A0E7-1C42CE98E615}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
